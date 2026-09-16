@@ -4,14 +4,18 @@ version = "1.0.0-DEV"
 authors = ["Sam Aucoin", "sam.aucoin@dal.ca"]
 
 [deps]
+DataMethods = "dab9b2ec-b9a3-42f2-bf16-a8cff39c6ff1"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+ExtraStats = "e63c6cca-01f4-4512-8a9d-7d793fea96eb"
 HypothesisTests = "09f84164-cd44-5f33-b23f-e6b0d136a0d5"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 Measurements = "eff96d63-e80a-5855-80a2-b1b0885c5ab7"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
 [compat]
+DataMethods = "1.0.0"
 Dates = "1.11.0"
+ExtraStats = "1.0.0"
 HypothesisTests = "0.12.2"
 LinearAlgebra = "1.12.0"
 Measurements = "2.14.1"

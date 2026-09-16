@@ -1,4 +1,4 @@
-export 
+export DLLx, DLLLx, ϵ_DLL, ϵ_DLLL, σ_DLL, umoments, ϵofx, ϵofxandt
 
 
 ############################################

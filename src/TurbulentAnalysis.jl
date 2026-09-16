@@ -1,6 +1,6 @@
 module TurbulentAnalysis
 
-using FourierFuncs     # for curvefitting
+using ExtraStats       # for extra stats and least squares fitting functions
 using DataMethods      # Extra data processing and analysis functions
 using StatsBase        # for Statistics
 using HypothesisTests  # For even more stats
