@@ -14,7 +14,7 @@ Optionally specify a `exponent_correction` to account for different PDF of the b
 
 
 """
-    DLLLx(r)
+    DLLLx(r; exponent_correction = 0)
 
 Change of variables of ranges `r` to x values for a linear fit for DLLL.
 Optionally specify a `exponent_correction` to account for different PDF of the breakage coefficient.
