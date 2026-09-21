@@ -206,7 +206,7 @@ Calculate from both the second and third order moments.
         N_coord = size(umom.x, 1) # Size of the input/output array
 
         ## Set the least squares fit parameters ##
-        fitfunc = getfield(FourierFuncs, fittype) # get the least squares fit function (OLS or GLS)
+        fitfunc = getfield(ExtraStats, fittype) # get the least squares fit function (OLS or GLS)
         fmodel(x, p) = p[1] * x .+ p[2]
         fmodel_power(x, p) = p[1] * x .^ p[2]
 

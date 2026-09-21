@@ -1,6 +1,9 @@
 using TurbulentAnalysis
 using Test
+using Dates
 
-@testset "TurbulentAnalysis.jl" begin
-    # Write your tests here.
+@testset "TurbulentAnalysis" begin
+    include("velocity_structure_functions.jl")
+    include("quality_control.jl")
+    include("misc.jl")
 end
