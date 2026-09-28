@@ -7,7 +7,6 @@ authors = ["Sam Aucoin sam.aucoin@dal.ca"]
 projects = ["docs"]
 
 [deps]
-DataMethods = "dab9b2ec-b9a3-42f2-bf16-a8cff39c6ff1"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
 DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
 ExtraStats = "e63c6cca-01f4-4512-8a9d-7d793fea96eb"
@@ -18,11 +17,9 @@ Random = "9a3f8284-a2c9-5f02-9a11-845980a1fd5c"
 StatsBase = "2913bbd2-ae8a-5f71-8c99-4fb6c76f3a91"
 
 [sources]
-DataMethods = {rev = "main", url = "https://github.com/s-aucoin/DataMethods.jl"}
 ExtraStats = {rev = "main", url = "https://github.com/s-aucoin/ExtraStats.jl"}
 
 [compat]
-DataMethods = "1.0.0"
 Dates = "1.11.0"
 DocumenterTools = "0.1.21"
 ExtraStats = "1.0.0"
