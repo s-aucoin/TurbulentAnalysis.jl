@@ -1,4 +1,4 @@
-export DLLx, DLLLx, ϵ_DLL, ϵ_DLLL, σ_DLL, umoments, ϵofx, ϵofxandt
+export DLLx, DLLLx, ϵ_DLL, ϵ_DLLL, σ_DLL, xlims2idx, umoments, ϵofx, ϵofxandt
 
 
 ############################################
@@ -70,6 +70,39 @@ Calculate the duration of the time series `t` in seconds.
 """
     function TimeDuration(t::AbstractVector{<:TimeType})
         return Dates.value(t[end] - t[1])/1000
+    end
+
+
+"""
+    xlims2idx(x, xmin, xmax)
+
+Create a vector of ranges from `xmin` to `xmax` in `x`.
+xlims2idx
+`x` can either be a vector or a matrix, while `xmin` and `xmax` can be a single value or a vector with size `size(x)[2]`. 
+The vector must be 1xtime so the dimensions line up.
+"""
+    function xlims2idx(x, xmin, xmax)
+
+        # Find the indices corresponding to xmax and xmin in x
+        (vals, min_x_idx) = findmin(abs.(x .- xmin), dims=1)
+        (vals, max_x_idx) = findmin(abs.(x .- xmax), dims=1)
+
+        # Extract the first dimension (the second should be 1:tmax in order)
+        min_x_idx = first.(Tuple.(min_x_idx))
+        max_x_idx = first.(Tuple.(max_x_idx))
+
+        # Create a vector of ranges for each xmax and xmin pair
+        x_idx_t = Array{UnitRange{Int64}}(undef, size(max_x_idx))
+        @threads for (tt, (idmin, idmax)) in collect(enumerate(zip(min_x_idx, max_x_idx)))
+            ## Whether the minimum value comes first depends on if `x` is in ascending or descending order ##
+            if issorted(x)
+                x_idx_t[tt] = idmin:idmax
+            else
+                x_idx_t[tt] = idmax:idmin
+            end
+        end
+
+        return vec(x_idx_t)
     end
 
 

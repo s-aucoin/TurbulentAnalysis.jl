@@ -77,7 +77,7 @@ Estimate the properties of the largest eddies of `u`.
 
 
             # Convert the covariance to correlation and integrate to get the lengthscale
-            ell_n = int_def_trap(covvec, Δr) / (u_rms_n.^2)
+            ell_n = Δr * sum((covvec[2:end] .+ covvec[1:end-1]) ./ 2) / (u_rms_n.^2)
             ell[iter] = ell_n
 
             # estimate the TKE dissipation rate
