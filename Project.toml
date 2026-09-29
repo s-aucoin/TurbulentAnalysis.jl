@@ -26,7 +26,7 @@ ExtraStats = "0.1.1"
 HypothesisTests = "0.12.2"
 LinearAlgebra = "1.12.0"
 Measurements = "2.14.1"
-Random = "1.11.0"
+Random = "1.11.0, 1.10"
 StatsBase = "0.34.13"
 julia = "1.10.10 - 1.12"
 
