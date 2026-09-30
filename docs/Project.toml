@@ -8,3 +8,4 @@ TurbulentAnalysis = {path = ".."}
 
 [compat]
 Documenter = "1.19.0"
+LiveServer = "1.6.0"
