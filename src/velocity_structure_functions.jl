@@ -431,14 +431,9 @@ Calculate a TKE dissipation rate time series using velocities `ur` with separati
             end
         end
 
-        ## display the actual maximum separation ##
-        true_rmax = umomofxandt[1].true_rmax
-        show("Actual maximum separation = $(true_rmax)")
-        ####
-
         if calculate_sf3
-            return (; x=x_coords, t=times, sf2, sf2σ, vari, variσ, sf2n, sf3, sf3σ, sf3n, umom = umomofxandt, true_rmax)
+            return (; x=x_coords, t=times, sf2, sf2σ, vari, variσ, sf2n, sf3, sf3σ, sf3n, umom = umomofxandt, true_rmax = umomofxandt[1].true_rmax)
         else
-            return (; x=x_coords, t=times, sf2, sf2σ, vari, variσ, sf2n, umom = umomofxandt, true_rmax)
+            return (; x=x_coords, t=times, sf2, sf2σ, vari, variσ, sf2n, umom = umomofxandt, true_rmax = umomofxandt[1].true_rmax)
         end
     end
