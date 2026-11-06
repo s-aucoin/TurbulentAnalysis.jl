@@ -354,7 +354,7 @@ Calculate a TKE dissipation rate time series using velocities `ur` with separati
     function ϵofxandt(ur, x, t, Δr, fs, Δt, rmax; xmin = minimum(x), xmax = maximum(x), min_points = 4, fittype = :OLS, γ = 0.32, minp2fit = 3, exponent_correction = 0, calculate_sf3 = true)
 
         ## Make a vector of indices to have the correct number of segments in the time series ##
-        time_idx = 1:floor(Int, TimeDuration(t)/Δt)
+        time_idx = 1:Int(length(t) ÷ (Δt*fs)) #1:floor(Int, TimeDuration(t)/Δt)
 
         ## Make the spatial coordinate vector ##
         ΔN = round(Int, rmax/Δr, RoundNearestTiesUp) # The number of points in a window
